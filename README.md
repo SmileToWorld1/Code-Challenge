@@ -1,4 +1,4 @@
-#  REST API PROJECT EXERCISE
+#  BeymenWebsite PROJECT EXERCISE
 
 ##### TOOLS AND EXPLANATIONS
 >- The project has been prepared based on Cucumber BDD style.
