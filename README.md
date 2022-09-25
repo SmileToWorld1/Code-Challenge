@@ -14,6 +14,10 @@
  -> mvn verify "-Dcucumber.filter.tags=@wip" -DBROWSER=chrome -> Both browserType and tags which you want to run can control easily from the command line with this command.
 ```
 
+### REPORT
+>- Cucumber report is generated under the target folder: `target/cucumber/cucumber-html-reports/overview-features.html`
+>- Under the target folder also generated **rerun.txt** file, and with this file only the failed test scenarios can rerun through the **FailedTestRunner** class.
+
 - Ismail SONMEZ 
 - QA Automation Engineer     
 
