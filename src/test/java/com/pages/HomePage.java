@@ -2,17 +2,16 @@ package com.pages;
 
 import com.utilities.BrowserUtils;
 import com.utilities.Driver;
-import org.openqa.selenium.By;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
 public class HomePage {
-
+    final static Logger logger = Logger.getLogger(HomePage.class);
     public HomePage(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
@@ -39,7 +38,7 @@ public class HomePage {
                 result = true;
                 break;
             } catch(StaleElementReferenceException e) {
-                e.printStackTrace();
+                logger.error("StaleElementReferenceException is occurred!!!");
             }
             attempts++;
         }
@@ -65,6 +64,7 @@ public class HomePage {
     public void clickFirstEnableProductVariation(){
         for (WebElement productVariation : productVariations) {
             if (productVariation.getAttribute("class").contains("disabled")){
+                logger.info("WebElement is disabled, continue next one!");
                 continue;
             }
             productVariation.click();
@@ -85,9 +85,5 @@ public class HomePage {
     public void clickGoToBasketButton(){
         BrowserUtils.waitForClickAbility(goToBasketButton).click();
     }
-
-
-
-
 
 }

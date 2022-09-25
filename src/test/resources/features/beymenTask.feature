@@ -1,9 +1,11 @@
-
+@smoke @regression
 Feature: Search Box ve Sepetim Fonksiyonlarının Test Edilmesi
   @wip
   Scenario: Aranan ürünün fiyatının Sepetim sayfasındaki ürün fiyatı ile karşılaştırılması ve sepetteki ürünün silinmesi
     Given Kullanıcı siteye giriş yapar
     When Ana sayfanın açıldığı kontrol edilir
+# Burada şort kelimesi ve gömlek kelimesi tırnak içerisine alınarak tek bir method içerisinde yazılan kelimeye göre arama kutucuğunda yazılacak kelimenin değişmesi
+# sağlanabilmesi imkanı olmasına rağmen excel dosyasından bu kelimelerin getirtilmesi istendiği için bu şekilde ifade edilmiştir
     And Arama kutucuğu şort kelimesi girilir
     But Arama kutucuğuna girilen şort kelimesi silinir
     Then Arama kutucuğuna gömlek kelimesi girilir

@@ -1,0 +1,16 @@
+
+INFO    2022-09-25 14:53:18,095 [pool-2-thread-1] com.step_definitions.Hooks  - @Before setup Scenarios
+ERROR   2022-09-25 14:53:34,294 [pool-2-thread-1] com.pages.HomePage  - StaleElementReferenceException is occurred!!!
+ERROR   2022-09-25 14:53:51,919 [pool-2-thread-1] com.step_definitions.BeymenTask_StepDefinition  - Bu ürün tek kalmýþtýr, miktar arttýrýlamaz!
+INFO    2022-09-25 14:53:53,345 [pool-2-thread-1] com.step_definitions.Hooks  - @After teardown Scenarios
+INFO    2022-09-25 14:57:37,143 [pool-2-thread-1] com.step_definitions.Hooks  - @Before setup Scenarios
+ERROR   2022-09-25 14:57:54,204 [pool-2-thread-1] com.pages.HomePage  - StaleElementReferenceException is occurred!!!
+INFO    2022-09-25 14:58:14,856 [pool-2-thread-1] com.step_definitions.Hooks  - @After teardown Scenarios
+INFO    2022-09-25 15:00:56,024 [main] com.step_definitions.Hooks  - @Before setup Scenarios
+ERROR   2022-09-25 15:01:08,514 [main] com.pages.HomePage  - StaleElementReferenceException is occurred!!!
+INFO    2022-09-25 15:01:11,687 [main] com.pages.HomePage  - WebElement is disabled, continue next one!
+INFO    2022-09-25 15:01:11,734 [main] com.pages.HomePage  - WebElement is disabled, continue next one!
+INFO    2022-09-25 15:01:11,758 [main] com.pages.HomePage  - WebElement is disabled, continue next one!
+INFO    2022-09-25 15:01:11,774 [main] com.pages.HomePage  - WebElement is disabled, continue next one!
+INFO    2022-09-25 15:01:11,790 [main] com.pages.HomePage  - WebElement is disabled, continue next one!
+INFO    2022-09-25 15:01:16,370 [main] com.step_definitions.Hooks  - @After teardown Scenarios

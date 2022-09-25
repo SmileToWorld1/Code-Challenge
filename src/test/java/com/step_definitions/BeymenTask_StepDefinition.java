@@ -4,11 +4,13 @@ import com.pages.BasketPage;
 import com.pages.HomePage;
 import com.utilities.*;
 import io.cucumber.java.en.*;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.NoSuchElementException;
 
 public class BeymenTask_StepDefinition {
+    private static final Logger logger = LogManager.getLogger(BeymenTask_StepDefinition.class.getName());
     HomePage homePage = new HomePage();
     BasketPage basketPage = new BasketPage();
     ExcelUtil excelUtil = new ExcelUtil("src/test/resources/BeymenTaskData.xlsx", "page1");
@@ -22,7 +24,7 @@ public class BeymenTask_StepDefinition {
 
     @When("Ana sayfanın açıldığı kontrol edilir")
     public void ana_sayfanın_açıldığı_kontrol_edilir() {
-        Assert.assertEquals("Ana Başlık uyuşmuyor!", homePage.homePageTitle, Driver.getDriver().getTitle());
+        BrowserUtils.verifyTitle(homePage.homePageTitle);
     }
 
     @When("Arama kutucuğu şort kelimesi girilir")
@@ -80,8 +82,7 @@ public class BeymenTask_StepDefinition {
             Assert.assertTrue("Miktar uyuşmuyor!", sepettekiÜrünMiktarı.contains(String.valueOf(adet)));
             BrowserUtils.waitForVisibility(basketPage.getNotifyTitle());
         }catch (Exception e){
-            System.out.println("Bu ürün tek kalmıştır, miktar arttırılamaz!");
-            e.printStackTrace();
+            logger.error("Bu ürün tek kalmıştır, miktar arttırılamaz!");
         }
     }
 
