@@ -37,13 +37,13 @@ public class Driver {
 
             switch (browser){
                 case "chrome":
-                    WebDriverManager.chromedriver().setup();
+                    WebDriverManager.chromedriver().browserVersion("latest").setup();
                     driverPool.set(new ChromeDriver());
                     driverPool.get().manage().window().maximize();
                     driverPool.get().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
                     break;
                 case "firefox":
-                    WebDriverManager.firefoxdriver().setup();
+                    WebDriverManager.firefoxdriver().browserVersion("latest").setup();
                     driverPool.set(new FirefoxDriver());
                     driverPool.get().manage().window().maximize();
                     driverPool.get().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);

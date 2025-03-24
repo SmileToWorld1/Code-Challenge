@@ -4,7 +4,8 @@ import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import java.util.Random;
+import java.util.List;
+
 
 public class BrowserUtils {
 
@@ -21,9 +22,19 @@ public class BrowserUtils {
      *
      * @param webElement
      */
-    public static WebElement waitForVisibility(WebElement webElement) {
+    public static WebElement waitForVisibilityOfElement(WebElement webElement) {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
         return wait.until(ExpectedConditions.visibilityOf(webElement));
+    }
+
+    /**
+     * Waits for the provided elements to be visible on the page
+     *
+     * @param webElements
+     */
+    public static List<WebElement> waitForVisibilityOfAllElements(List<WebElement> webElements) {
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
+        return wait.until(ExpectedConditions.visibilityOfAllElements(webElements));
     }
 
     /**
@@ -37,20 +48,13 @@ public class BrowserUtils {
         return wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
-    /**
-     *This method generate a random number between lowerRange to upperRange
-     * @param lowerRange within limits
-     * @param upperRange within limits
-     * @return random integer number
-     */
-    public static int generateRandomIntNumWithRange(int lowerRange, int upperRange){
-        Random random = new Random();
-            int rand;
-            while (true){
-                rand = random.nextInt(upperRange+1);
-                if(rand >= lowerRange) break;
-            }
-        return rand;
+    public static void waitForTime(long timeInSeconds) {
+        try {
+            long timeInMillis = timeInSeconds * 1000;
+            Thread.sleep(timeInMillis);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
 

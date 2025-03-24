@@ -1,10 +1,9 @@
-#  BeymenWebsite PROJECT EXERCISE
+#  QA-Code Challenge PROJECT EXERCISE
 
 ##### TOOLS AND EXPLANATIONS
 >- The project has been prepared based on Cucumber BDD style.
->- In this project, Java programming language and Maven build management tool were used.
->- LOG4J information is provided as a logging design.
->- The project includes one scenario which is about searching function, adding, and deleting one exact product from basket box.
+>- In this project, Java programming language and Maven build management tool and JUnit testing framework were used.
+
 
 ##### HOW TO RUN TESTS
 ```sh
